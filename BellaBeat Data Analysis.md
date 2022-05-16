@@ -233,7 +233,7 @@ mod_int <- hintensities %>%
 ggplot(data=mod_int) + geom_col(mapping = aes(x=Day,y=mean_int),fill="darkgreen") + labs(title="Total Intensity vs Day")
 ```
 
-![](bbeat_files/figure-gfm/Intensity%20vs%20Day-1.png)<!-- -->
+![](bbeat_files/figure-gfm/Intensity_vs_Day-1.png)<!-- -->
 
 From this chart we can see that there is a slight preference for high
 activity/intensity on Saturday.
@@ -246,7 +246,7 @@ tim_int <- hintensities %>%
 ggplot(data=tim_int) + geom_col(mapping = aes(x=Time,y=mean_int),fill="darkgreen") + theme(axis.text.x = element_text(angle = 90)) + labs(title="Total Intensity vs Time")
 ```
 
-![](bbeat_files/figure-gfm/Intensity%20vs%20Time-1.png)<!-- -->
+![](bbeat_files/figure-gfm/Intensity_vs_Time-1.png)<!-- -->
 
 From this second chart we can intuit that most people prefer to be most
 active between the times of 5pm and 7pm.
@@ -255,7 +255,7 @@ active between the times of 5pm and 7pm.
 ggplot(data=sleep) + geom_jitter(mapping = aes(x=TotalTimeInBed,y=TotalMinutesAsleep),color="darkgreen") + labs(title="Time in Bed vs Time Asleep")
 ```
 
-![](bbeat_files/figure-gfm/Time%20in%20Bed%20vs%20Time%20Asleep-1.png)<!-- -->
+![](bbeat_files/figure-gfm/Time_in_Bed_vs_Time_Asleep-1.png)<!-- -->
 
 This one is rather obvious, but this chart shows that there is a direct
 correlation between time spent in bed and the time spent asleep.
@@ -267,7 +267,7 @@ ggplot(data=act_merge, aes(x=SedentaryMinutes,y=TotalMinutesAsleep)) + geom_poin
 
     ## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
 
-![](bbeat_files/figure-gfm/Time%20Idle%20vs%20Time%20Asleep-1.png)<!-- -->
+![](bbeat_files/figure-gfm/Time_Idle_vs_Time_Asleep-1.png)<!-- -->
 
 With this we can see a downward trend where more sedentary time
 correlates to less sleep.
