@@ -40,7 +40,9 @@ ORDER BY property_type;
 A list of all the property types that have had service calls.
 
 ```
-SELECT property_category, COUNT(*) AS num_of_fires
+SELECT 
+  property_category, 
+  COUNT(*) AS num_of_fires
 FROM `bigquery-public-data.london_fire_brigade.fire_brigade_service_calls`
 WHERE incident_group = "Fire"
 GROUP BY property_category
@@ -70,7 +72,9 @@ FROM `bigquery-public-data.london_fire_brigade.fire_brigade_service_calls`;
 59.75% of calls made provided correct location information regarding the incident.
 
 ```
-SELECT proper_case, COUNT(*) AS calls
+SELECT 
+  proper_case, 
+  COUNT(*) AS calls
 FROM `bigquery-public-data.london_fire_brigade.fire_brigade_service_calls`
 GROUP BY proper_case
 ORDER BY COUNT(*) DESC;
@@ -79,7 +83,9 @@ ORDER BY COUNT(*) DESC;
 Westminster has almost double the amount of calls of the other boroughs.
 
 ```
-SELECT hour_of_call, COUNT(*) AS num_of_calls
+SELECT 
+  hour_of_call, 
+  COUNT(*) AS num_of_calls
 FROM `bigquery-public-data.london_fire_brigade.fire_brigade_service_calls`
 GROUP BY hour_of_call
 ORDER BY hour_of_call;
