@@ -88,10 +88,28 @@ ORDER BY hour_of_call;
 Number of calls per hour of the day. The low point for calls is between the hours of 3am to 5am. While the most number of calls occur between 5pm and 7pm.
 
 ```
-SELECT incident_number, date_of_call, time_of_call, hour_of_call, incident_group, stop_code_description, special_service_type, property_category, property_type, address_qualifier, postcode_full, postcode_district, borough_code, borough_name, proper_case, ward_code, ward_name, ward_name_new
+SELECT 
+  incident_number, 
+  date_of_call, 
+  time_of_call, 
+  hour_of_call, 
+  incident_group, 
+  stop_code_description, 
+  special_service_type, 
+  property_category, 
+  property_type, 
+  address_qualifier, 
+  postcode_full, 
+  postcode_district, 
+  borough_code, 
+  borough_name, 
+  proper_case, 
+  ward_code, 
+  ward_name, 
+  ward_name_new
 FROM `bigquery-public-data.london_fire_brigade.fire_brigade_service_calls`
 WHERE proper_case != "Not geo-coded"
 ORDER BY proper_case, ward_name, timestamp_of_call;
 ```
 
-Cleaning the data by excluding the location nulls and sorting by borough, ward, and call timestamp. The data is ready to be exported to our data visualization software.
+Cleaning the data by excluding the location nulls (normally we would try to figure out why the nulls exist and if we could input the missing data) and sorting by borough, ward, and call timestamp. The data is ready to be exported to our data visualization software.
